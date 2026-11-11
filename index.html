@@ -111,6 +111,30 @@ footer{padding-block:56px 48px;text-align:center}
 .facts-line{font-family:var(--label);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
 .booklinks{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline}
 .book.soft{border-bottom-color:var(--rule);color:var(--ink-soft)}
+.letter{display:grid;gap:18px;font-size:1.06rem;line-height:1.8;max-width:62ch}
+.letter p:first-child::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.8;padding:6px 10px 0 0}
+.letter .sign{font-family:var(--display);font-style:italic;font-size:1.6rem;padding-top:6px}
+@media (min-width:900px){
+  body{font-size:17px}
+  .col{max-width:1120px;padding-inline:24px}
+  .top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:end;padding-top:56px}
+  .top .hero{padding-top:0}
+  .top .hero img{width:100%}
+  .top .intro{padding-block:0}
+  .ch{padding-block:96px 8px}
+  #about .letter{margin-inline:auto;max-width:640px}
+  #about .letter p{font-size:1.12rem}
+  .band .col{max-width:1120px}
+  .band .ch{padding-block:88px;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:72px;align-items:start}
+  .band .ch > *{grid-column:2}
+  .band .ch > .ch-head{grid-column:1/-1}
+  .band .ch > .big{grid-column:1;grid-row:2 / span 4}
+  .svc{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #stays{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
+  #stays > .ch-head{grid-column:1/-1}
+  .stay{align-content:start}
+  #contact{max-width:640px;margin-inline:auto}
+}
 html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !important}
 
 @media (min-width:700px){
@@ -134,32 +158,37 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
     </div>
   </div>
 
+  <div class="top">
   <div class="hero"><img src="img/sophie.jpg" alt="Sophie Hauser"></div>
 
   <div class="intro">
     <span class="label">Ocean Park · Sauce de Portezuelo · Uruguay</span>
     <h1>Sophie's Destinations</h1>
-    <p class="where">por Sophie Hauser</p>
-    <p class="lead" data-l="es">Casas en la costa uruguaya, cuidadas con detalle. Especializada en Ocean Park, Sauce de Portezuelo y alrededores, para huéspedes y para propietarios.</p>
-    <p class="lead" data-l="en">Homes on the Uruguayan coast, looked after with care. Specialised in Ocean Park, Sauce de Portezuelo and the surrounding area, for guests and for owners.</p>
+    <p class="where" data-l="es">por Sophie Hauser</p><p class="where" data-l="en">by Sophie Hauser</p>
+    <p class="lead" data-l="es">Una pequeña colección de casas elegidas a mano en Ocean Park y Sauce de Portezuelo. Quedate en una, o confiame la tuya.</p>
+    <p class="lead" data-l="en">A small collection of hand-picked homes in Ocean Park and Sauce de Portezuelo. Stay in one, or entrust me with yours.</p>
     <ol class="toc">
-      <li><a href="#about"><span class="n">01</span><span class="t" data-l="es">Sobre mí</span><span class="t" data-l="en">About me</span><span class="arr" aria-hidden="true">↓</span></a></li>
-      <li><a href="#owners"><span class="n">02</span><span class="t" data-l="es">Para propietarios</span><span class="t" data-l="en">For owners</span><span class="arr" aria-hidden="true">↓</span></a></li>
+      <li><a href="#about"><span class="n">01</span><span class="t" data-l="es">Sobre mí</span><span class="t" data-l="en">About</span><span class="arr" aria-hidden="true">↓</span></a></li>
+      <li><a href="#owners"><span class="n">02</span><span class="t" data-l="es">Para propietarios</span><span class="t" data-l="en">Homeowners</span><span class="arr" aria-hidden="true">↓</span></a></li>
       <li><a href="#stays"><span class="n">03</span><span class="t" data-l="es">Destinos</span><span class="t" data-l="en">Destinations</span><span class="arr" aria-hidden="true">↓</span></a></li>
       <li><a href="#contact"><span class="n">04</span><span class="t" data-l="es">Contacto</span><span class="t" data-l="en">Contact</span><span class="arr" aria-hidden="true">↓</span></a></li>
     </ol>
   </div>
+  </div>
 
   <section class="ch" id="about">
-    <div class="ch-head"><span class="n">01</span><span class="label" data-l="es">Sobre mí</span><span class="label" data-l="en">About me</span></div>
-    <p class="big" data-l="es">Hola, soy Sophie. <em>Trabajo en hotelería desde hace más de 10 años.</em></p>
-    <p class="big" data-l="en">Hi, I’m Sophie. <em>I’ve been working in hospitality for over 10 years.</em></p>
-    <p data-l="es">Me formé en hotelería en Schloss Elmau y trabajé en hoteles de lujo en Alemania y Suiza. Hoy vivo en Uruguay, gestiono casas en la costa y tengo mis propias cabañas y glamping.</p>
-    <p data-l="en">I trained in hotel management at Schloss Elmau and worked in luxury hotels in Germany and Switzerland. Today I live in Uruguay, manage homes on the coast and run my own cabins and glamping.</p>
-    <div class="facts">
-      <div><b>10+</b><span data-l="es">años en hotelería</span><span data-l="en">years in hospitality</span></div>
-      <div><b>EN · ES · DE</b><span data-l="es">idiomas</span><span data-l="en">languages</span></div>
-      <div><b>DE · CH</b><span data-l="es">hoteles de lujo</span><span data-l="en">luxury hotels</span></div>
+    <div class="ch-head"><span class="n">01</span><span class="label" data-l="es">Una nota de tu anfitriona</span><span class="label" data-l="en">A note from your host</span></div>
+    <div class="letter" data-l="es">
+      <p>Mi amor por la hotelería empezó a los quince años. Me llevó a Schloss Elmau, en Baviera, donde me formé en hotelería, y después a hoteles de lujo en Hamburgo y en los Alpes suizos.</p>
+      <p>Y en 2019 llegó Uruguay. Iban a ser unas vacaciones, nada más. Nos enamoramos al instante. Volvimos una y otra vez, y con cada viaje lo tenía más claro: un día iba a vivir acá. En 2025 di el paso.</p>
+      <p>Hoy uno las dos cosas, en unas pocas casas elegidas en esta costa.</p>
+      <p class="sign">— Sophie Hauser</p>
+    </div>
+    <div class="letter" data-l="en">
+      <p>My love for hospitality began at fifteen. It took me to Schloss Elmau in Bavaria, where I trained in hotel management, and on to luxury hotels in Hamburg and the Swiss Alps.</p>
+      <p>Then, in 2019, came Uruguay. It was meant to be a holiday, nothing more. We fell in love instantly. We kept coming back, and with every visit I knew a little more clearly: one day I would live here. In 2025 I made the move.</p>
+      <p>Now I bring both together, in a few hand-picked homes on this coast.</p>
+      <p class="sign">— Sophie Hauser</p>
     </div>
   </section>
 </div>
@@ -167,7 +196,7 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
 <div class="band">
   <div class="col">
     <section class="ch" id="owners">
-      <div class="ch-head"><span class="n">02</span><span class="label" data-l="es">Para propietarios</span><span class="label" data-l="en">For owners</span></div>
+      <div class="ch-head"><span class="n">02</span><span class="label" data-l="es">Para propietarios</span><span class="label" data-l="en">Homeowners</span></div>
       <p class="big" data-l="es">Tener casa en la costa es lindo. <em>Cuidarla a distancia, no tanto.</em></p>
       <p class="big" data-l="en">Owning a home on the coast is lovely. <em>Looking after it from afar, less so.</em></p>
       <p data-l="es">Vos disfrutás tu casa, yo me ocupo del resto. Elegís cómo:</p>
@@ -220,8 +249,8 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
       <div class="galbar"><span class="count">1 / 5</span><span><button type="button" class="prev" aria-label="Anterior">←</button><button type="button" class="next" aria-label="Siguiente">→</button></span></div>
       <span class="meta">Ocean Park · Uruguay</span>
       <h3>Casa Conil</h3>
-      <p data-l="es">Casa nueva con terminaciones de estándar alemán: baño moderno, estufa a leña, galería con parrillero y jardín con palmeras. A 10 minutos a pie de la playa.</p>
-      <p data-l="en">A new house finished to German standards: modern bathroom, wood stove, covered terrace with barbecue and a garden with palm trees. A 10-minute walk from the beach.</p>
+      <p data-l="es">Galería techada con parrillero, cocina totalmente equipada con electrodomésticos de primera, lavarropas con secadora y jardín privado. A 10 minutos a pie de la playa.</p>
+      <p data-l="en">Covered terrace with barbecue, a fully equipped kitchen with high-end appliances, a washer-dryer and a private garden. A 10-minute walk to the beach.</p>
       <p class="facts-line" data-l="es">4 huéspedes · 2 dormitorios</p>
       <p class="facts-line" data-l="en">4 guests · 2 bedrooms</p>
       <div class="booklinks">
