@@ -179,3 +179,23 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
   .svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px}
   .svc-block{border-bottom:0;border-top:1px solid var(--ink)}
 }
+
+/* models + service groups */
+.models{display:grid;border-top:1px solid var(--rule)}
+.model{display:grid;grid-template-columns:44px 1fr;column-gap:8px;row-gap:8px;padding:22px 0;border-bottom:1px solid var(--rule);scroll-margin-top:90px}
+.model .n{font-family:var(--label);font-size:.75rem;letter-spacing:.12em;color:var(--ink-soft);padding-top:.5em}
+.model h3{font-size:1.7rem}
+.model p{grid-column:2;color:var(--ink-soft);font-size:.98rem}
+.model:target h3{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.svc-groups{display:grid;gap:8px}
+.svc-group{display:grid;gap:10px;padding-block:18px;border-top:1px solid var(--ink)}
+.svc-group h3{font-family:var(--label);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.svc-group ul{list-style:none;margin:0;padding:0;display:grid}
+.svc-group li{display:grid;gap:2px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.svc-group li:last-child{border-bottom:0}
+.svc-group b{font-family:var(--display);font-weight:500;font-size:1.3rem;line-height:1.2}
+.svc-group li > span{font-size:.94rem;color:var(--ink-soft)}
+.mail a{text-decoration:none}
+@media (min-width:900px){
+  .svc-groups{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:32px}
+}
