@@ -3,344 +3,176 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Casas en la costa uruguaya, cuidadas con detalle. Ocean Park y Sauce de Portezuelo. Para huéspedes y propietarios.">
-<meta property="og:title" content="Sophie's Destinations">
-<meta property="og:description" content="Casas en la costa uruguaya, cuidadas con detalle. Ocean Park · Sauce de Portezuelo.">
-<meta property="og:image" content="https://sophiesdestinations.github.io/img/conil-1.jpg">
-<meta property="og:type" content="website">
 <title>Sophie's Destinations</title>
+<meta name="description" content="Gestión de casas en la costa uruguaya: alquiler por temporada, alquiler mensual y cuidado de la casa. Ocean Park, Sauce de Portezuelo y Maldonado.">
+<meta property="og:title" content="Sophie's Destinations">
+<meta property="og:description" content="Gestión de casas en la costa uruguaya: alquiler por temporada, alquiler mensual y cuidado de la casa. Ocean Park, Sauce de Portezuelo y Maldonado.">
+<meta property="og:image" content="https://sophiesdestinations.com/img/conil-1.jpg">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap">
-<style>
-/* Layout: editorial single column like a travel magazine. Pale sky ground, navy ink, hairline rules, square edges, numbered chapters. One full-bleed sky band for owners. */
-:root{
-  --bg:#EEF7FC; --sky:#AFDAF3; --ink:#10496A; --ink-soft:#3D6A86; --rule:rgba(16,73,106,.28); --paper:#FFFFFF;
-  --display:"Cormorant Garamond", "Iowan Old Style", Georgia, serif;
-  --body:"Lora", Georgia, "Times New Roman", serif;
-  --label:"Jost", "Futura", "Avenir Next", "Helvetica Neue", sans-serif;
-  color-scheme:light;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.7;padding-inline:20px;padding-block:0;overflow-x:hidden}
-.col{max-width:620px;margin:0 auto}
-h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.05;margin:0;text-wrap:balance}
-p{margin:0;text-wrap:pretty}
-a{color:var(--ink)}
-.label{font-family:var(--label);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500}
-.soft{color:var(--ink-soft)}
-
-.mast{display:flex;justify-content:space-between;align-items:center;padding-block:20px 16px;border-bottom:1px solid var(--rule)}
-.lang{display:flex;gap:2px;align-items:center}
-.lang button{border:0;background:none;font-family:var(--label);font-size:.72rem;letter-spacing:.18em;color:var(--ink-soft);padding:6px;cursor:pointer}
-.lang button[aria-pressed="true"]{color:var(--ink);text-decoration:underline;text-underline-offset:5px}
-.lang span{color:var(--rule)}
-
-.hero{padding-top:36px}
-.hero img{display:block;width:min(62%,300px);max-width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%}
-.intro{padding-block:36px 8px;display:grid;gap:18px}
-.intro h1{font-size:clamp(3rem,13vw,4.6rem);letter-spacing:-.01em}
-.intro .where{font-family:var(--display);font-style:italic;font-size:1.35rem;color:var(--ink-soft)}
-.intro p.lead{font-size:1.08rem;max-width:36ch}
-
-.toc{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--rule)}
-.toc li{border-bottom:1px solid var(--rule)}
-.toc a{display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:8px;padding:15px 0;text-decoration:none}
-.toc .n{font-family:var(--label);font-size:.75rem;letter-spacing:.12em;color:var(--ink-soft)}
-.toc .t{font-family:var(--display);font-size:1.6rem;line-height:1.1}
-.toc .arr{font-family:var(--label);font-size:.9rem}
-
-.ch{padding-block:72px 8px;display:grid;gap:22px;scroll-margin-top:12px}
-.ch-head{display:grid;grid-template-columns:44px 1fr;align-items:baseline;gap:8px;border-bottom:1px solid var(--ink);padding-bottom:12px}
-.ch-head .n{font-family:var(--label);font-size:.8rem;letter-spacing:.12em}
-.big{font-family:var(--display);font-size:clamp(2.1rem,8.6vw,3rem);line-height:1.1}
-.big em{font-style:italic;color:var(--ink-soft)}
-
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.facts div{padding:16px 12px 14px 0;display:grid;gap:4px;min-width:0;align-content:start}
-.facts div + div{border-left:1px solid var(--rule);padding-left:14px}
-.facts b{font-family:var(--display);font-weight:500;font-size:clamp(1.35rem,5.6vw,2.1rem);line-height:1;white-space:nowrap}
-.facts span{font-family:var(--label);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);line-height:1.45}
-
-.band{background:var(--sky);margin-inline:-20px;padding-inline:20px;margin-top:72px}
-.band .ch{padding-block:64px}
-.opts{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.opts li{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:14px 0;border-bottom:1px solid var(--rule);font-family:var(--display);font-size:1.45rem;line-height:1.2}
-.opts li span:first-child{font-family:var(--label);font-size:.75rem;letter-spacing:.12em;padding-top:6px}
-.svc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;margin:0;padding:0;list-style:none}
-.svc li{padding:12px 0;border-bottom:1px solid var(--rule);font-size:.92rem;min-width:0}
-.svc li b{display:block;font-weight:500;font-size:.98rem}
-.price{display:grid;gap:8px;padding-top:6px}
-.price small{font-size:.85rem;color:var(--ink-soft)}
-.cta{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:17px 20px;border:1px solid var(--ink);text-decoration:none;font-family:var(--label);font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;background:var(--ink);color:var(--paper)}
-.cta:hover{background:transparent;color:var(--ink)}
-.cta:focus-visible,.toc a:focus-visible,.lang button:focus-visible,.row:focus-visible,.book:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
-
-.stay{display:grid;gap:14px;padding-bottom:44px}
-.img{margin-inline:-20px;aspect-ratio:3/2;background:linear-gradient(160deg,#CFE8F6 0%,#E6EEF2 60%,#EFE8E2 100%);display:grid;place-items:center}
-.img span{font-family:var(--label);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
-.stay h3{font-size:2.3rem}
-.stay .meta{font-family:var(--label);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-.stay p{max-width:46ch}
-.book{justify-self:start;font-family:var(--label);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px}
-
-.rows{border-top:1px solid var(--ink)}
-.row{display:grid;grid-template-columns:auto 1fr;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule);text-decoration:none}
-.row .k{font-family:var(--label);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
-.row .v{font-family:var(--display);font-size:1.3rem;text-align:right;min-width:0;overflow-wrap:anywhere}
-footer{padding-block:56px 48px;text-align:center}
-
-.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-20px;scrollbar-width:none;outline:none}
-.gal::-webkit-scrollbar{display:none}
-.gal img{flex:0 0 100%;width:100%;max-width:100%;aspect-ratio:3/2;object-fit:cover;scroll-snap-align:start;display:block}
-.galbar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding-bottom:10px}
-.galbar .count{font-family:var(--label);font-size:.72rem;letter-spacing:.18em;color:var(--ink-soft);font-variant-numeric:tabular-nums}
-.galbar button{border:1px solid var(--ink);background:transparent;color:var(--ink);width:40px;height:40px;font-family:var(--label);font-size:1rem;cursor:pointer}
-.galbar button + button{margin-left:6px}
-.galbar button:hover{background:var(--ink);color:var(--paper)}
-.galbar button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.mail{font-size:.9rem;color:var(--ink-soft);user-select:all}
-.icons{display:flex;gap:10px;justify-content:center;padding-top:6px}
-.icons{gap:22px}
-.icons a{width:44px;height:44px;display:grid;place-items:center;color:var(--ink)}
-.icons a:hover{color:var(--ink-soft)}
-.icons a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.icons svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.facts-line{font-family:var(--label);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
-.booklinks{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:baseline}
-.book.soft{border-bottom-color:var(--rule);color:var(--ink-soft)}
-.letter{display:grid;gap:18px;font-size:1.06rem;line-height:1.8;max-width:62ch}
-.letter p:first-child::first-letter{font-family:var(--display);font-size:3.4em;float:left;line-height:.8;padding:6px 10px 0 0}
-.letter .sign{font-family:var(--display);font-style:italic;font-size:1.6rem;padding-top:6px}
-@media (min-width:900px){
-  body{font-size:17px}
-  .col{max-width:1120px;padding-inline:24px}
-  .top{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:end;padding-top:56px}
-  .top .hero{padding-top:0}
-  .top .hero img{width:100%}
-  .top .intro{padding-block:0}
-  .ch{padding-block:96px 8px}
-  #about .letter{margin-inline:auto;max-width:640px}
-  #about .letter p{font-size:1.12rem}
-  .band .col{max-width:1120px}
-  .band .ch{padding-block:88px;grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:72px;align-items:start}
-  .band .ch > *{grid-column:2}
-  .band .ch > .ch-head{grid-column:1/-1}
-  .band .ch > .big{grid-column:1;grid-row:2 / span 4}
-  .svc{grid-template-columns:repeat(3,minmax(0,1fr))}
-  #stays{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:56px}
-  #stays > .ch-head{grid-column:1/-1}
-  .stay{align-content:start}
-  #contact{max-width:640px;margin-inline:auto}
-}
-html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !important}
-
-@media (min-width:700px){
-  .img{margin-inline:0}
-  .gal{margin-inline:0}
-  .band{margin-inline:calc(50% - 50vw);padding-inline:20px}
-}
-@media (max-width:380px){
-  .svc{grid-template-columns:1fr}
-  .facts b{font-size:1.7rem}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<header class="site-head">
+  <div class="col">
+    <a class="brand" href="index.html">Sophie's Destinations</a>
+    <nav class="nav" aria-label="Principal"><a href="index.html" aria-current="page"><span data-l="es">Inicio</span><span data-l="en">Home</span></a><a href="servicios.html"><span data-l="es">Servicios</span><span data-l="en">Services</span></a><a href="casas.html"><span data-l="es">Casas</span><span data-l="en">Homes</span></a></nav>
+    <div class="head-right">
+      <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" id="b-es" aria-pressed="true">ES</button><span>/</span><button type="button" id="b-en" aria-pressed="false">EN</button></div>
+      <a class="btn small" href="index.html#contacto"><span data-l="es">Consulta</span><span data-l="en">Contact</span></a>
+    </div>
+  </div>
+  <div class="col mobile-nav"><a href="index.html" aria-current="page"><span data-l="es">Inicio</span><span data-l="en">Home</span></a><a href="servicios.html"><span data-l="es">Servicios</span><span data-l="en">Services</span></a><a href="casas.html"><span data-l="es">Casas</span><span data-l="en">Homes</span></a></div>
+</header>
+<main>
 <div class="col">
-  <div class="mast">
-    <span class="label">Sophie's Destinations</span>
-    <div class="lang" role="group" aria-label="Idioma / Language">
-      <button type="button" id="b-es" aria-pressed="true">ES</button><span>/</span><button type="button" id="b-en" aria-pressed="false">EN</button>
+  <section class="hero">
+    <div class="hero-img"><img src="img/conil-1.jpg" alt="Casa Conil, Ocean Park"></div>
+    <div style="display:grid;gap:24px">
+      <span class="label soft"><span data-l="es">Gestión de casas · Costa uruguaya</span><span data-l="en">Home management · Uruguay’s coast</span></span>
+      <h1><span data-l="es">Tu casa, <em>en buenas manos.</em></span><span data-l="en">Your home, <em>in good hands.</em></span></h1>
+      <p class="lead"><span data-l="es">Cuidamos una pequeña colección de casas elegidas a mano en la costa uruguaya, con foco en Ocean Park, Sauce de Portezuelo y la costa de Maldonado. Vos disfrutás tu casa, nosotros nos ocupamos del resto.</span><span data-l="en">We look after a small collection of hand-picked homes on Uruguay’s coast, with a focus on Ocean Park, Sauce de Portezuelo and the Maldonado coast. You enjoy your home, we take care of the rest.</span></p>
+      <div class="ctas"><a class="btn" href="#contacto"><span data-l="es">Contanos sobre tu casa</span><span data-l="en">Tell us about your home</span> <span aria-hidden="true">→</span></a><a class="btn ghost" href="casas.html"><span data-l="es">Ver nuestras casas</span><span data-l="en">See our homes</span></a></div>
     </div>
-  </div>
+  </section>
 
-  <div class="top">
-  <div class="hero"><img src="img/sophie.jpg" alt="Sophie Hauser"></div>
-
-  <div class="intro">
-    <span class="label">Ocean Park · Sauce de Portezuelo · Uruguay</span>
-    <h1>Sophie's Destinations</h1>
-    <p class="where" data-l="es">por Sophie Hauser</p><p class="where" data-l="en">by Sophie Hauser</p>
-    <p class="lead" data-l="es">Una pequeña colección de casas elegidas a mano en Ocean Park y Sauce de Portezuelo. Quedate en una, o confiame la tuya.</p>
-    <p class="lead" data-l="en">A small collection of hand-picked homes in Ocean Park and Sauce de Portezuelo. Stay in one, or entrust me with yours.</p>
-    <ol class="toc">
-      <li><a href="#about"><span class="n">01</span><span class="t" data-l="es">Sobre mí</span><span class="t" data-l="en">About</span><span class="arr" aria-hidden="true">↓</span></a></li>
-      <li><a href="#owners"><span class="n">02</span><span class="t" data-l="es">Para propietarios</span><span class="t" data-l="en">Homeowners</span><span class="arr" aria-hidden="true">↓</span></a></li>
-      <li><a href="#stays"><span class="n">03</span><span class="t" data-l="es">Destinos</span><span class="t" data-l="en">Destinations</span><span class="arr" aria-hidden="true">↓</span></a></li>
-      <li><a href="#contact"><span class="n">04</span><span class="t" data-l="es">Contacto</span><span class="t" data-l="en">Contact</span><span class="arr" aria-hidden="true">↓</span></a></li>
+  <section class="sec split">
+    <div class="sec-head">
+      <span class="label"><span data-l="es">Para propietarios</span><span data-l="en">For homeowners</span></span>
+      <h2><span data-l="es">Tres formas de trabajar juntos</span><span data-l="en">Three ways to work together</span></h2>
+      <p><span data-l="es">Elegís lo que necesitás. Cada propuesta se arma a medida de tu casa.</span><span data-l="en">Choose what you need. Every proposal is tailored to your home.</span></p>
+    </div>
+    <ol class="opts">
+      <li><a href="servicios.html#temporada"><span class="n">I</span><span class="t"><span data-l="es">Alquiler por temporada</span><span data-l="en">Short-term rentals</span></span><span class="arr" aria-hidden="true">→</span><span class="d"><span data-l="es">Anuncio, precios, huéspedes, limpieza: todo resuelto.</span><span data-l="en">Listing, pricing, guests, cleaning: all taken care of.</span></span></a></li>
+      <li><a href="servicios.html#mensual"><span class="n">II</span><span class="t"><span data-l="es">Alquiler mensual</span><span data-l="en">Monthly rentals</span></span><span class="arr" aria-hidden="true">→</span><span class="d"><span data-l="es">Inquilinos por meses, sin preocuparte por la temporada baja.</span><span data-l="en">Tenants by the month, so the low season works too.</span></span></a></li>
+      <li><a href="servicios.html#cuidado"><span class="n">III</span><span class="t"><span data-l="es">Cuidado de la casa</span><span data-l="en">Home care</span></span><span class="arr" aria-hidden="true">→</span><span class="d"><span data-l="es">Sin alquilar: tu casa controlada y lista para cuando llegás.</span><span data-l="en">No renting: your home checked and ready when you arrive.</span></span></a></li>
     </ol>
-  </div>
-  </div>
-
-  <section class="ch" id="about">
-    <div class="ch-head"><span class="n">01</span><span class="label" data-l="es">Una nota de tu anfitriona</span><span class="label" data-l="en">A note from your host</span></div>
-    <div class="letter" data-l="es">
-      <p>Mi amor por la hotelería empezó a los quince años. Me llevó a Schloss Elmau, en Baviera, donde me formé en hotelería, y después a hoteles de lujo en Hamburgo y en los Alpes suizos.</p>
-      <p>Y en 2019 llegó Uruguay. Iban a ser unas vacaciones, nada más. Nos enamoramos al instante. Volvimos una y otra vez, y con cada viaje lo tenía más claro: un día iba a vivir acá. En 2025 di el paso.</p>
-      <p>Hoy uno las dos cosas, en unas pocas casas elegidas en esta costa.</p>
-      <p class="sign">— Sophie Hauser</p>
-    </div>
-    <div class="letter" data-l="en">
-      <p>My love for hospitality began at fifteen. It took me to Schloss Elmau in Bavaria, where I trained in hotel management, and on to luxury hotels in Hamburg and the Swiss Alps.</p>
-      <p>Then, in 2019, came Uruguay. It was meant to be a holiday, nothing more. We fell in love instantly. We kept coming back, and with every visit I knew a little more clearly: one day I would live here. In 2025 I made the move.</p>
-      <p>Now I bring both together, in a few hand-picked homes on this coast.</p>
-      <p class="sign">— Sophie Hauser</p>
-    </div>
   </section>
 </div>
 
 <div class="band">
   <div class="col">
-    <section class="ch" id="owners">
-      <div class="ch-head"><span class="n">02</span><span class="label" data-l="es">Para propietarios</span><span class="label" data-l="en">Homeowners</span></div>
-      <p class="big" data-l="es">Tener casa en la costa es lindo. <em>Cuidarla a distancia, no tanto.</em></p>
-      <p class="big" data-l="en">Owning a home on the coast is lovely. <em>Looking after it from afar, less so.</em></p>
-      <p data-l="es">Vos disfrutás tu casa, yo me ocupo del resto. Elegís cómo:</p>
-      <p data-l="en">You enjoy your home, I take care of the rest. You choose how:</p>
-      <ol class="opts" data-l="es">
-        <li><span>I</span><span>Alquiler por temporada</span></li>
-        <li><span>II</span><span>Alquiler mensual</span></li>
-        <li><span>III</span><span>Solo el cuidado de tu casa, sin alquilarla</span></li>
-      </ol>
-      <ol class="opts" data-l="en">
-        <li><span>I</span><span>Short-term rentals</span></li>
-        <li><span>II</span><span>Monthly rentals</span></li>
-        <li><span>III</span><span>Home care only, no renting</span></li>
-      </ol>
-      <ul class="svc" data-l="es">
-        <li><b>Anuncio y fotos</b>Airbnb, Booking.com</li>
-        <li><b>Huéspedes</b>En español, inglés y alemán</li>
-        <li><b>Limpieza</b>Organización del equipo</li>
-        <li><b>Jardín y mantenimiento</b>Organización</li>
-        <li><b>Reparaciones</b>Presupuestos y control final</li>
-        <li><b>Extras, con cargo</b>Heladera llena, piscina, traslados</li>
-      </ul>
-      <ul class="svc" data-l="en">
-        <li><b>Listing &amp; photos</b>Airbnb, Booking.com</li>
-        <li><b>Guests</b>In English, Spanish &amp; German</li>
-        <li><b>Cleaning</b>Team organised</li>
-        <li><b>Garden &amp; maintenance</b>Organised</li>
-        <li><b>Repairs</b>Quotes and final check</li>
-        <li><b>Paid extras</b>Fridge stocked, pool, transfers</li>
-      </ul>
-      <div class="price">
-        <span class="label" data-l="es">Precios</span><span class="label" data-l="en">Pricing</span>
-        <p data-l="es">Para alquiler por temporada trabajo con un porcentaje de las reservas. Para alquiler mensual o el cuidado de la casa, acordamos un precio fijo.</p>
-        <p data-l="en">For short-term rentals I charge a percentage of bookings. For monthly rentals or home care, we agree on a fixed price.</p>
-        <small data-l="es">Limpieza, jardín, reparaciones y extras los paga el propietario.</small>
-        <small data-l="en">Cleaning, garden, repairs and extras are paid by the owner.</small>
+    <section class="sec">
+      <div class="sec-head">
+        <span class="label"><span data-l="es">Por qué nosotros</span><span data-l="en">Why us</span></span>
+        <h2><span data-l="es">Estándar de hotel, a la vuelta de la esquina</span><span data-l="en">Hotel standards, just around the corner</span></h2>
       </div>
-      <a class="cta" href="mailto:sophie@isladelasrosas.com?subject=Mi%20casa%20%2F%20My%20home"><span data-l="es">Hablemos de tu casa</span><span data-l="en">Let’s talk about your home</span><span aria-hidden="true">→</span></a>
-      <p class="mail">sophie@isladelasrosas.com</p>
+      <div class="pillars">
+        <div class="pillar"><h3><span data-l="es">Formación de hotel de lujo</span><span data-l="en">Luxury hotel training</span></h3><p><span data-l="es">Sophie estudió hotelería en Schloss Elmau, un hotel cinco estrellas de The Leading Hotels of the World, y trabajó en hoteles de lujo en Hamburgo y Suiza.</span><span data-l="en">Sophie studied hotel management at Schloss Elmau, a five-star Leading Hotel of the World, and went on to work in luxury hotels in Hamburg and Switzerland.</span></p></div>
+        <div class="pillar"><h3><span data-l="es">Siempre cerca</span><span data-l="en">Always nearby</span></h3><p><span data-l="es">Vivimos en la zona. Si algo pasa, estamos ahí, no a tres horas de distancia.</span><span data-l="en">We live in the area. If something comes up, we are there, not three hours away.</span></p></div>
+        <div class="pillar"><h3><span data-l="es">Tres idiomas</span><span data-l="en">Three languages</span></h3><p><span data-l="es">Español, inglés y alemán, para propietarios y huéspedes de todo el mundo.</span><span data-l="en">Spanish, English and German, for owners and guests from anywhere.</span></p></div>
+      </div>
     </section>
   </div>
 </div>
 
 <div class="col">
-  <section class="ch" id="stays">
-    <div class="ch-head"><span class="n">03</span><span class="label" data-l="es">Destinos</span><span class="label" data-l="en">Destinations</span></div>
-
-    <article class="stay">
-      <div class="gal" tabindex="0" aria-label="Fotos Casa Conil"><img src="img/conil-1.jpg" alt="Casa Conil desde el jardín"><img src="img/conil-2.jpg" alt="Living con ventanal" loading="lazy"><img src="img/conil-3.jpg" alt="Galería con mesa puesta" loading="lazy"><img src="img/conil-4.jpg" alt="Dormitorio" loading="lazy"><img src="img/conil-5.jpg" alt="Baño" loading="lazy"></div>
-      <div class="galbar"><span class="count">1 / 5</span><span><button type="button" class="prev" aria-label="Anterior">←</button><button type="button" class="next" aria-label="Siguiente">→</button></span></div>
-      <span class="meta">Ocean Park · Uruguay</span>
-      <h3>Casa Conil</h3>
-      <p data-l="es">Galería techada con parrillero, cocina totalmente equipada con electrodomésticos de primera, lavarropas con secadora y jardín privado. A 10 minutos a pie de la playa.</p>
-      <p data-l="en">Covered terrace with barbecue, a fully equipped kitchen with high-end appliances, a washer-dryer and a private garden. A 10-minute walk to the beach.</p>
-      <p class="facts-line" data-l="es">4 huéspedes · 2 dormitorios</p>
-      <p class="facts-line" data-l="en">4 guests · 2 bedrooms</p>
-      <div class="booklinks">
-        <a class="book" href="https://www.airbnb.com/rooms/1669704647599640684" target="_blank" rel="noopener"><span data-l="es">Ver y reservar en Airbnb →</span><span data-l="en">View and book on Airbnb →</span></a>
-        <a class="book soft" data-l="es" href="https://wa.me/59892623551?text=Hola%20Sophie%2C%20tengo%20una%20consulta%20sobre%20Casa%20Conil" target="_blank" rel="noopener">o consultame directo</a>
-        <a class="book soft" data-l="en" href="https://wa.me/59892623551?text=Hi%20Sophie%2C%20I%20have%20a%20question%20about%20Casa%20Conil" target="_blank" rel="noopener">or ask me directly</a>
+  <section class="sec" id="nosotros">
+    <div class="sec-head"><span class="label"><span data-l="es">Una nota de la fundadora</span><span data-l="en">A note from our founder</span></span></div>
+    <div class="note">
+      <img src="img/sophie.jpg" alt="Sophie Hauser">
+      <div>
+        <div class="letter" data-l="es">
+          <p>Mi amor por la hotelería empezó a los quince años. Me llevó a Schloss Elmau, en Baviera, donde estudié hotelería, y después a hoteles de lujo en Hamburgo y en los Alpes suizos.</p>
+          <p>Y en 2019 llegó Uruguay. Iban a ser unas vacaciones, nada más. Nos enamoramos al instante. Volvimos una y otra vez, y con cada viaje lo tenía más claro: un día iba a vivir acá. En 2025 di el paso.</p>
+          <p>Hoy uno las dos cosas, en unas pocas casas elegidas en esta costa.</p>
+          <p class="sign">— Sophie Hauser</p>
+        </div>
+        <div class="letter" data-l="en">
+          <p>My love for hospitality began at fifteen. It took me to Schloss Elmau in Bavaria, where I studied hotel management, and on to luxury hotels in Hamburg and the Swiss Alps.</p>
+          <p>Then, in 2019, came Uruguay. It was meant to be a holiday, nothing more. We fell in love instantly. We kept coming back, and with every visit I knew a little more clearly: one day I would live here. In 2025 I made the move.</p>
+          <p>Now I bring both together, in a few hand-picked homes on this coast.</p>
+          <p class="sign">— Sophie Hauser</p>
+        </div>
       </div>
-    </article>
-    <article class="stay">
-      <div class="gal" tabindex="0" aria-label="Fotos Flor de la Isla"><img src="img/flor-1.jpg" alt="Jardín con hortensias" loading="lazy"><img src="img/flor-2.jpg" alt="Dormitorio con mosquitero" loading="lazy"><img src="img/flor-3.jpg" alt="Parrillero entre hortensias" loading="lazy"><img src="img/flor-4.jpg" alt="Cocina" loading="lazy"><img src="img/flor-5.jpg" alt="Jardín con palmeras" loading="lazy"></div>
-      <div class="galbar"><span class="count">1 / 5</span><span><button type="button" class="prev" aria-label="Anterior">←</button><button type="button" class="next" aria-label="Siguiente">→</button></span></div>
-      <span class="meta">Sauce de Portezuelo · Uruguay</span>
-      <h3>Flor de la Isla</h3>
-      <p data-l="es">A 800 m de la playa, entre casi 70 palmeras. A 10 minutos del aeropuerto de Punta del Este.</p>
-      <p data-l="en">800 m from the beach, among nearly 70 palm trees. 10 minutes from Punta del Este airport.</p>
-      <p class="facts-line" data-l="es">2 huéspedes · ★ 4,92 · 118 reseñas</p>
-      <p class="facts-line" data-l="en">2 guests · ★ 4.92 · 118 reviews</p>
-      <div class="booklinks">
-        <a class="book" href="https://www.airbnb.com/rooms/7819586" target="_blank" rel="noopener"><span data-l="es">Ver y reservar en Airbnb →</span><span data-l="en">View and book on Airbnb →</span></a>
-        <a class="book soft" data-l="es" href="https://wa.me/59892623551?text=Hola%20Sophie%2C%20tengo%20una%20consulta%20sobre%20Flor%20de%20la%20Isla" target="_blank" rel="noopener">o consultame directo</a>
-        <a class="book soft" data-l="en" href="https://wa.me/59892623551?text=Hi%20Sophie%2C%20I%20have%20a%20question%20about%20Flor%20de%20la%20Isla" target="_blank" rel="noopener">or ask me directly</a>
-      </div>
-    </article>
-    <article class="stay">
-      <div class="gal" tabindex="0" aria-label="Fotos Sol de la Isla"><img src="img/sol-1.jpg" alt="Palmera en el jardín" loading="lazy"><img src="img/sol-2.jpg" alt="Parrillero encendido" loading="lazy"><img src="img/sol-3.jpg" alt="Cocina" loading="lazy"><img src="img/sol-4.jpg" alt="Dormitorio" loading="lazy"><img src="img/sol-5.jpg" alt="Living con estufa" loading="lazy"></div>
-      <div class="galbar"><span class="count">1 / 5</span><span><button type="button" class="prev" aria-label="Anterior">←</button><button type="button" class="next" aria-label="Siguiente">→</button></span></div>
-      <span class="meta">Sauce de Portezuelo · Uruguay</span>
-      <h3>Sol de la Isla</h3>
-      <p data-l="es">A 800 m de la playa, entre casi 70 palmeras. A 10 minutos del aeropuerto de Punta del Este.</p>
-      <p data-l="en">800 m from the beach, among nearly 70 palm trees. 10 minutes from Punta del Este airport.</p>
-      <p class="facts-line" data-l="es">4 huéspedes · ★ 4,95 · 61 reseñas · Favorito de los huéspedes</p>
-      <p class="facts-line" data-l="en">4 guests · ★ 4.95 · 61 reviews · Guest favourite</p>
-      <div class="booklinks">
-        <a class="book" href="https://www.airbnb.com/rooms/7803392" target="_blank" rel="noopener"><span data-l="es">Ver y reservar en Airbnb →</span><span data-l="en">View and book on Airbnb →</span></a>
-        <a class="book soft" data-l="es" href="https://wa.me/59892623551?text=Hola%20Sophie%2C%20tengo%20una%20consulta%20sobre%20Sol%20de%20la%20Isla" target="_blank" rel="noopener">o consultame directo</a>
-        <a class="book soft" data-l="en" href="https://wa.me/59892623551?text=Hi%20Sophie%2C%20I%20have%20a%20question%20about%20Sol%20de%20la%20Isla" target="_blank" rel="noopener">or ask me directly</a>
-      </div>
-    </article>
-    <article class="stay">
-      <div class="gal" tabindex="0" aria-label="Fotos Glamping"><img src="img/glamping-1.jpg" alt="Carpa sobre el deck" loading="lazy"><img src="img/glamping-2.jpg" alt="Carpa al atardecer" loading="lazy"><img src="img/glamping-3.jpg" alt="Cama doble en la carpa" loading="lazy"><img src="img/glamping-4.jpg" alt="Copas en el deck" loading="lazy"><img src="img/glamping-5.jpg" alt="Cocina y baños compartidos" loading="lazy"></div>
-      <div class="galbar"><span class="count">1 / 5</span><span><button type="button" class="prev" aria-label="Anterior">←</button><button type="button" class="next" aria-label="Siguiente">→</button></span></div>
-      <span class="meta">Sauce de Portezuelo · Uruguay</span>
-      <h3>Glamping</h3>
-      <p data-l="es">Carpas entre las palmeras, a 800 m del mar.</p>
-      <p data-l="en">Bell tents among the palm trees, 800 m from the sea.</p>
-      <p class="facts-line" data-l="es">Carpa con cama doble, deck propio</p>
-      <p class="facts-line" data-l="en">Tent with double bed, private deck</p>
-      <div class="booklinks">
-        <a class="book" href="https://www.airbnb.com/rooms/1624712243549228332" target="_blank" rel="noopener"><span data-l="es">Ver y reservar en Airbnb →</span><span data-l="en">View and book on Airbnb →</span></a>
-        <a class="book soft" data-l="es" href="https://wa.me/59892623551?text=Hola%20Sophie%2C%20tengo%20una%20consulta%20sobre%20Glamping" target="_blank" rel="noopener">o consultame directo</a>
-        <a class="book soft" data-l="en" href="https://wa.me/59892623551?text=Hi%20Sophie%2C%20I%20have%20a%20question%20about%20Glamping" target="_blank" rel="noopener">or ask me directly</a>
-      </div>
-    </article>
+    </div>
   </section>
 
-  <section class="ch" id="contact">
-    <div class="ch-head"><span class="n">04</span><span class="label" data-l="es">Contacto</span><span class="label" data-l="en">Contact</span></div>
+  <section class="sec split">
+    <div class="sec-head">
+      <span class="label"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></span>
+      <h2><span data-l="es">Tres pasos</span><span data-l="en">Three steps</span></h2>
+    </div>
+    <ol class="steps">
+      <li><span class="n">1</span><div><b><span data-l="es">Contanos sobre tu casa</span><span data-l="en">Tell us about your home</span></b><p><span data-l="es">Completás el formulario en dos minutos.</span><span data-l="en">Fill in the form in two minutes.</span></p></div></li>
+      <li><span class="n">2</span><div><b><span data-l="es">Nos conocemos</span><span data-l="en">We meet</span></b><p><span data-l="es">Visitamos la casa, hablamos de tus ideas y te armamos una propuesta. Sin compromiso.</span><span data-l="en">We visit the house, talk about your plans and put together a proposal. No obligation.</span></p></div></li>
+      <li><span class="n">3</span><div><b><span data-l="es">Nos ocupamos</span><span data-l="en">We take over</span></b><p><span data-l="es">Preparamos la casa, el anuncio y los huéspedes. Vos recibís informes claros.</span><span data-l="en">We prepare the house, the listing and the guests. You receive clear reports.</span></p></div></li>
+    </ol>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head">
+      <span class="label"><span data-l="es">Nuestras casas</span><span data-l="en">Our homes</span></span>
+      <h2><span data-l="es">Una selección elegida a mano</span><span data-l="en">A hand-picked selection</span></h2>
+      <p><span data-l="es">Las casas que cuidamos hoy, cada una como si fuera nuestra.</span><span data-l="en">The homes we look after today, each one cared for as if it were our own.</span></p>
+    </div>
+    <div class="teaser">
+      <a href="casas.html#casa-conil"><img src="img/conil-3.jpg" alt="" loading="lazy"><span class="meta">Ocean Park</span><h3>Casa Conil</h3></a>
+      <a href="casas.html#flor"><img src="img/flor-1.jpg" alt="" loading="lazy"><span class="meta">Sauce de Portezuelo</span><h3>Flor de la Isla</h3></a>
+      <a href="casas.html#sol"><img src="img/sol-1.jpg" alt="" loading="lazy"><span class="meta">Sauce de Portezuelo</span><h3>Sol de la Isla</h3></a>
+      <a href="casas.html#glamping"><img src="img/glamping-1.jpg" alt="" loading="lazy"><span class="meta">Sauce de Portezuelo</span><h3>Glamping</h3></a>
+    </div>
+    <a class="more" href="casas.html"><span data-l="es">Ver todas las casas →</span><span data-l="en">See all homes →</span></a>
+  </section>
+
+  <section class="sec split" id="contacto">
+    <div class="sec-head">
+      <span class="label"><span data-l="es">Contacto</span><span data-l="en">Contact</span></span>
+      <h2><span data-l="es">Contanos sobre tu casa</span><span data-l="en">Tell us about your home</span></h2>
+      <p><span data-l="es">Nos encantaría conocer tu propiedad y mostrarte cómo podemos cuidarla. Te respondemos personalmente en menos de 24 horas.</span><span data-l="en">We would love to hear about your property and show you how we can take care of it. We reply personally within 24 hours.</span></p>
+    </div>
+    <form class="form" action="https://formsubmit.co/sophie@isladelasrosas.com" method="POST">
+      <input type="hidden" name="_subject" value="Nueva consulta – Sophie's Destinations">
+      <input type="hidden" name="_next" value="https://sophiesdestinations.com/gracias.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="idioma" id="f-lang" value="es">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <fieldset>
+        <legend><span data-l="es">¿Dónde está tu casa?</span><span data-l="en">Where is your home?</span></legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="ubicacion" value="Ocean Park" required><span>Ocean Park</span></label>
+          <label class="chip"><input type="radio" name="ubicacion" value="Sauce de Portezuelo"><span>Sauce de Portezuelo</span></label>
+          <label class="chip"><input type="radio" name="ubicacion" value="Punta del Este"><span>Punta del Este</span></label>
+          <label class="chip"><input type="radio" name="ubicacion" value="Piriápolis"><span>Piriápolis</span></label>
+          <label class="chip"><input type="radio" name="ubicacion" value="Otra zona"><span><span data-l="es">Otra zona</span><span data-l="en">Elsewhere</span></span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><span data-l="es">¿Qué estás buscando?</span><span data-l="en">What are you looking for?</span></legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="servicio" value="Alquiler por temporada" required><span><span data-l="es">Alquiler por temporada</span><span data-l="en">Short-term rentals</span></span></label>
+          <label class="chip"><input type="radio" name="servicio" value="Alquiler mensual"><span><span data-l="es">Alquiler mensual</span><span data-l="en">Monthly rentals</span></span></label>
+          <label class="chip"><input type="radio" name="servicio" value="Cuidado de la casa"><span><span data-l="es">Cuidado de la casa</span><span data-l="en">Home care</span></span></label>
+          <label class="chip"><input type="radio" name="servicio" value="Todavía no sé"><span><span data-l="es">Todavía no sé</span><span data-l="en">Not sure yet</span></span></label>
+        </div>
+      </fieldset>
+      <div class="fields">
+        <label class="field"><span data-l="es">Nombre</span><span data-l="en">Name</span><input type="text" name="nombre" autocomplete="name" required></label>
+        <label class="field">E-mail<input type="email" name="email" autocomplete="email" required></label>
+        <label class="field wide"><span data-l="es">WhatsApp (opcional)</span><span data-l="en">WhatsApp (optional)</span><input type="tel" name="whatsapp" autocomplete="tel"></label>
+        <label class="field wide"><span data-l="es">Contanos un poco más (opcional)</span><span data-l="en">Anything else? (optional)</span><textarea name="mensaje" data-ph-es="Tamaño, dormitorios, cuándo la usás…" data-ph-en="Size, bedrooms, when you use it…"></textarea></label>
+      </div>
+      <div class="ctas"><button class="btn" type="submit"><span data-l="es">Enviar consulta</span><span data-l="en">Send enquiry</span> <span aria-hidden="true">→</span></button></div>
+      <p class="fine"><span data-l="es">Sin compromiso. Tus datos solo se usan para responderte.</span><span data-l="en">No obligation. Your details are only used to reply to you.</span></p>
+    </form>
+  </section>
+</div>
+</main>
+<footer>
+  <div class="col">
     <div class="icons">
       <a href="https://wa.me/59892623551" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 8.8c.3 2.6 2.4 4.9 5.2 5.4l1.2-1.2 1.8.8-.4 1.8c-4.4.3-8.2-3.4-8-7.8l1.8-.4.8 1.8z"/></svg></a>
       <a href="https://www.instagram.com/sophie.hrs" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".5"/></svg></a>
       <a href="https://www.linkedin.com/in/sophiehauser/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M8 10.5V16M8 7.8v.1M11.5 16v-5.5M11.5 13c0-1.6 1-2.6 2.3-2.6s2.2.9 2.2 2.6V16"/></svg></a>
       <a href="mailto:sophie@isladelasrosas.com" aria-label="E-mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a>
     </div>
-    <p class="mail" style="text-align:center">sophie@isladelasrosas.com · +598 92 623 551</p>
-  </section>
-
-  <footer><span class="label soft">Sophie's Destinations · Maldonado, Uruguay</span></footer>
-</div>
-
-<script>
-(function(){
-  var root=document.documentElement, es=document.getElementById('b-es'), en=document.getElementById('b-en');
-  function set(l){
-    root.lang=l; es.setAttribute('aria-pressed',String(l==='es')); en.setAttribute('aria-pressed',String(l==='en'));
-    try{localStorage.setItem('sd-lang',l);}catch(e){}
-  }
-  var saved=null; try{saved=localStorage.getItem('sd-lang');}catch(e){}
-  set(saved || ((navigator.language||'es').slice(0,2)==='es'?'es':'en'));
-  document.querySelectorAll('.gal').forEach(function(g){
-    var bar=g.nextElementSibling, c=bar.querySelector('.count'), n=g.children.length;
-    function idx(){return Math.round(g.scrollLeft/g.clientWidth);}
-    function upd(){c.textContent=(idx()+1)+' / '+n;}
-    g.addEventListener('scroll',function(){window.requestAnimationFrame(upd);},{passive:true});
-    bar.querySelector('.prev').addEventListener('click',function(){g.scrollTo({left:Math.max(0,idx()-1)*g.clientWidth,behavior:'smooth'});});
-    bar.querySelector('.next').addEventListener('click',function(){var i=idx()+1; if(i>=n)i=0; g.scrollTo({left:i*g.clientWidth,behavior:'smooth'});});
-  });
-  es.addEventListener('click',function(){set('es');});
-  en.addEventListener('click',function(){set('en');});
-})();
-</script>
-
+    <p class="mail">sophie@isladelasrosas.com · +598 92 623 551</p>
+    <span class="label soft">Sophie's Destinations · Uruguay</span>
+  </div>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
