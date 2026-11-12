@@ -52,7 +52,7 @@ img{max-width:100%;display:block}
 
 /* sections */
 .sec{padding-block:72px 8px;display:grid;gap:24px;scroll-margin-top:80px}
-.sec-head{display:grid;gap:14px;border-bottom:1px solid var(--ink);padding-bottom:14px}
+.sec-head{display:grid;gap:14px}
 .sec-head h2{font-size:clamp(2rem,8vw,2.9rem)}
 .sec-head p{color:var(--ink-soft);max-width:52ch}
 
@@ -166,8 +166,8 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
   .hero-img img{aspect-ratio:4/5}
   .sec{padding-block:104px 8px}
   .sec.split{grid-template-columns:minmax(0,5fr) minmax(0,7fr);column-gap:72px;align-items:start}
-  .sec.split > .sec-head{border-bottom:0;padding-bottom:0;position:sticky;top:110px}
-  .pillars{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px;border-top:1px solid var(--ink)}
+  .sec.split > .sec-head{position:sticky;top:110px}
+  .pillars{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px}
   .pillar{border-bottom:0}
   .note{grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:72px;align-items:center}
   .note img{width:100%}
@@ -198,4 +198,19 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
 .mail a{text-decoration:none}
 @media (min-width:900px){
   .svc-groups{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:32px}
+}
+
+/* tiles with line icons */
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 18px;margin-top:8px}
+.tile{display:grid;gap:8px;align-content:start;padding-top:18px;border-top:1px solid var(--rule)}
+.tile svg{width:30px;height:30px;fill:none;stroke:var(--ink);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;margin-bottom:6px}
+.tile h3{font-size:1.25rem;line-height:1.2}
+.tile p{font-size:.9rem;color:var(--ink-soft)}
+/* grouped FAQ */
+.faq-groups{display:grid;gap:34px}
+.faq-group h3{font-family:var(--label);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--ink-soft);padding-bottom:4px;border-bottom:1px solid var(--rule)}
+.faq-group details{border-bottom:1px solid var(--rule);padding:14px 0}
+.faq-group summary{font-size:1.25rem}
+@media (min-width:900px){
+  .tiles{grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 36px}
 }
