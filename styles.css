@@ -214,3 +214,7 @@ html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none !impor
 @media (min-width:900px){
   .tiles{grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 36px}
 }
+.sub-head{display:grid;gap:8px;margin-top:40px}
+.sub-head h3{font-size:1.6rem}
+.sub-head p{color:var(--ink-soft);max-width:52ch}
+@media (min-width:900px){.tiles-5{grid-template-columns:repeat(5,minmax(0,1fr));gap:44px 28px}}
